@@ -8,7 +8,8 @@ const fs = require('fs')
 const minimist = require('minimist')
 
 // Define allowed argument name 'port'.
-const port = process.args.port('--port=')|| process.env.PORT || 3000
+const port = process.env.PORT || 3000
+//process.args.port('--port=')|| 
 // Define a const `port` using the argument from the command line. 
 // Make this const default to port 3000 if there is no argument given for `--port`.
 
@@ -21,7 +22,7 @@ const port = process.args.port('--port=')|| process.env.PORT || 3000
 // Do not be nice about exiting.
 
 
-fs.readFile('/www/index.html', 'utf8' , (err, data) => {
+fs.readFile('/Users/angus/github-classroom/comp426-2022-spring/a01-angusingram-1/www/index.html', 'utf8' , (err, data) => {
     if (err) {
         console.error(err)
         return
@@ -41,7 +42,7 @@ fs.readFile('/www/index.html', 'utf8' , (err, data) => {
 const server = http.createServer((req, res) => {
     res.statusCode = 200
     res.setHeader('Content-Type', 'text/html')
-    res.end('/www/index.html')
+    res.end(x)
   })
 
 
